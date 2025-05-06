@@ -4,23 +4,7 @@ import 'dart:convert';
 
 class HttpService {
   // URL base que funciona em diferentes ambientes
-  late String _baseUrl;
-
-  HttpService() {
-    // Configure baseUrl based on platform
-    if (kIsWeb) {
-      // Web usa localhost diretamente
-      _baseUrl = 'http://localhost:8080';
-    } else {
-      // Dispositivos nativos - 10.0.2.2 para Android emulator
-      // e localhost para iOS simulator
-      _baseUrl = 'http://localhost:8080';
-    }
-
-    if (kDebugMode) {
-      print('HttpService initialized with baseUrl: $_baseUrl');
-    }
-  }
+  late String _baseUrl = 'http://localhost:8080';
 
   set baseUrl(String url) => _baseUrl = url;
 
@@ -52,11 +36,13 @@ class HttpService {
         print('POST request to: $uri');
         print('Request body: ${jsonEncode(body)}');
       }
+
       final response = await http.post(
         uri,
         body: jsonEncode(body),
         headers: {'Content-Type': 'application/json'},
       );
+
       if (kDebugMode) {
         print('Response status: ${response.statusCode}');
         print('Response body: ${response.body}');

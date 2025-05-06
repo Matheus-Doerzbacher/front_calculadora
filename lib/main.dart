@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:front_calculadora/ui/home_page.dart';
-import 'package:front_calculadora/ui/login_page.dart';
+import 'package:front_calculadora/view/home_page.dart';
+import 'package:front_calculadora/view/login_page.dart';
 
 void main() {
   runApp(const MyApp());
