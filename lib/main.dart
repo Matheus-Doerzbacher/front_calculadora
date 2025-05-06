@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:front_calculadora/model/ususario.dart';
 import 'package:front_calculadora/ui/home_page.dart';
 import 'package:front_calculadora/ui/login_page.dart';
 
